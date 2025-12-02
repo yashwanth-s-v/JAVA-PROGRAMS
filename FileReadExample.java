@@ -1,0 +1,17 @@
+import java.io.*;
+
+public class FileReadExample {
+    public static void main(String[] args) {
+        File file = new File("sample.txt");
+
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            System.out.println("First line: " + br.readLine());
+            br.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("Error: File not found!");
+        } catch (IOException e) {
+            System.out.println("Error: Unable to read the file!");
+        }
+    }
+}
